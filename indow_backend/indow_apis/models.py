@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils import timezone
 
 
@@ -26,7 +25,6 @@ class CreateUpdateMixin(models.Model):
 
 class InstagramProfile(SoftDeleteMixin, CreateUpdateMixin):
     insta_uid = models.CharField(max_length=255)
-    app_user = models.ForeignKey(User, on_delete=models.CASCADE)
     access_token = models.CharField(max_length=255)
     full_name = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
