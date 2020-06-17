@@ -118,3 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Scrapyd Configs
+SCRAPYD_SERVER_URL="http://127.0.0.1:6800/"
+SCRAPER_AGENT='Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
