@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .indow_apis import views
+from django.conf.urls import static
+from rest_framework import routers
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('superuser/', admin.site.urls),
+    path('profile/crawl',views.StartInstagramCrawlerView.as_view(),name='crawl_instagram_profile'),
+    path('profile/crawl/zip/<str:crawler_id>',views.DownloadCrawledImages.as_view(),name='crawled_profile_zip'),
 ]

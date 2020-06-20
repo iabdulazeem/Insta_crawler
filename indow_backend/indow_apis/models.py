@@ -50,7 +50,7 @@ class InstagramMediaInsight(SoftDeleteMixin, CreateUpdateMixin):
 
 
 class InstagramUserMedia(SoftDeleteMixin, CreateUpdateMixin):
-    media_id = models.CharField(max_length=255)
+    media_id = models.CharField(max_length=255, primary_key=True)
     insta_user = models.ForeignKey(InstagramProfile, on_delete=models.CASCADE)
     media_insight = models.ForeignKey(
         InstagramMediaInsight, related_name='urls', on_delete=models.CASCADE)
@@ -64,7 +64,7 @@ class InstagramUserMedia(SoftDeleteMixin, CreateUpdateMixin):
 class InstagramMediaComments(SoftDeleteMixin, CreateUpdateMixin):
     comment_id = models.CharField(max_length=255)
     media = models.ForeignKey(
-        InstagramUserMedia, related_name='comments', on_delete=models.CASCADE)
+        InstagramUserMedia, related_name='comments', on_delete=models.CASCADE, default="")
     comment_text = models.TextField(default="")
     comment_by = models.TextField(default="")
 

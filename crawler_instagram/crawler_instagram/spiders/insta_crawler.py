@@ -148,7 +148,7 @@ class InstagramSpider(scrapy.Spider):
         self.connection = psycopg2.connect(host=settings.get('HOSTNAME'), user=settings.get(
             'USERNAME'), password=settings.get('PASSWORD'), dbname=settings.get('DB_NAME'))
         self.cursor = self.connection.cursor()
-        running_spider_query = f"update instagram_benchmark_crawlerstats set status='Invalid_Profile' where unique_id='{unique_id}';"
+        running_spider_query = f"update indow_apis_crawlerstats set status='Invalid_Profile' where unique_id='{unique_id}';"
         self.cursor.execute(running_spider_query)
         try:
             self.connection.commit()
