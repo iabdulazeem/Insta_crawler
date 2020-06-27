@@ -1,0 +1,28 @@
+  version: '3'
+    
+  services:
+    db:
+      image: postgres
+      environment:
+        # - POSTGRES_DB=postgres
+        # - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+
+    django:
+      build: .
+      command: python manage.py runserver 0.0.0.0:3001
+      volumes:
+        - .:/code
+      ports:
+        - "3001:3001"
+      depends_on:
+        - db
+        - scrapyd
+
+    scrapyd:
+      build: .
+      command: bash -c "cd /code/crawler_instagram && scrapyd"
+      volumes:
+        - .:/code
+      ports:
+        - "6800:6800"

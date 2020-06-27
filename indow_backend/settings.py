@@ -28,7 +28,7 @@ SECRET_KEY = 'x-q-p&h^(v#@o8@n#!xml%$1pa%qggo9$j75-l@o#-hrt5hq!l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Scrapyd Configs
-SCRAPYD_SERVER_URL="http://127.0.0.1:6800/"
+SCRAPYD_SERVER_URL="http://192.168.8.100:6800/"
 SCRAPER_AGENT='Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko; googleweblight) Chrome/38.0.1025.166 Mobile Safari/535.19'
 
 

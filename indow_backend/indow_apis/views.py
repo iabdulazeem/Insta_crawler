@@ -36,7 +36,8 @@ class StartInstagramCrawlerView(APIView):
             crawler_stats.status = "Started"
             crawler_stats.save()
             return True
-        except:
+        except Exception as e:
+            raise e
             return False
 
 
