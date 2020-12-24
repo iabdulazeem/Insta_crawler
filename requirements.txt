@@ -23,14 +23,14 @@ PyDispatcher==2.0.5
 PyHamcrest==2.0.2
 pyOpenSSL==19.1.0
 python-scrapyd-api==2.1.2
-pytz==2020.1
+pytz==2020.4
 queuelib==1.5.0
 requests==2.25.1
 Scrapy==2.1.0
 scrapyd==1.2.1
 service-identity==18.1.0
 six==1.15.0
-sqlparse==0.3.1
+sqlparse==0.4.1
 Twisted==20.3.0
 urllib3==1.26.2
 uuid==1.30
